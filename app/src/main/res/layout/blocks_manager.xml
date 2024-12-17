@@ -1,21 +1,13 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:navigationIcon="?attr/homeAsUpIndicator"
-        app:title="Block Manager" />
-
     <LinearLayout
         android:id="@+id/background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar"
         android:orientation="vertical">
 
         <com.google.android.material.card.MaterialCardView
@@ -83,7 +75,6 @@
         </com.google.android.material.card.MaterialCardView>
 
         <TextView
-            android:id="@+id/paletteCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="12dp"
@@ -94,10 +85,14 @@
             android:textAppearance="?attr/textAppearanceBodyLarge"
             android:textColor="?attr/colorOnSurface"
             android:textSize="18sp" />
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/paletteRecycler"
+
+        <ListView
+            android:id="@+id/list_pallete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:choiceMode="none"
+            android:divider="@null"
+            android:dividerHeight="0dp"
             tools:listitem="@layout/pallet_customview" />
     </LinearLayout>
 
@@ -106,9 +101,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center|end"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="20dp"
+        android:layout_margin="16dp"
         app:srcCompat="@drawable/ic_add_white_24dp" />
-</RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
